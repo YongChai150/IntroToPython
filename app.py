@@ -19,15 +19,11 @@ But it can be of multiple lines
 @app.route('/',methods=['POST','GET'])
 def index():
     a = 100
-    b = "I am String"
-    c = 123.456
-    d = Weather()
+    b = 200.12
 
-    print(type(a))
-    print(type(b))
-    print(type(c))
-    print(type(d))
-    return "Hello World"
+    c = a + b
+    print("Give me an output {}".format(c))
+    return str(c)
 
 if __name__ == "__main__":
     app.run(debug=True)
