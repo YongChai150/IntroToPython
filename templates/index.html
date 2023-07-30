@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<div class="content">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Place Name</th>
+                <th scope="col">Longtitude</th>
+                <th scope="col">Latitude</th>
+                <th scope="col">Last Update</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for location_object in location_objects %}
+            <tr scope="row">
+                <td>{{location_object.name}}</td>
+                <td>{{location_object.longtitude}}</td>
+                <td>{{location_object.latitude}}</td>
+                <td>{{location_object.date_created.date()}}</td>
+                <td>
+                    <a href="">Update</a>
+                    <br>
+                    <a href="">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="/" method="POST">
+        Longtitude<input type="text" name="longtitude" id="longtitude">
+        Latitude<input type="text" name="latitude" id="latitude">
+        Place name<input type="text" name="name" id="name">
+        <input type="submit" value="Add Place">
+    </form>
+</div>
