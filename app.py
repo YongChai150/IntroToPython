@@ -7,6 +7,34 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///course.db'
 db.init_app(app)
 
+#this is how you comment in Python, in single line
+
+
+'''
+This is also how you comment in Python
+But it can be of multiple lines
+    and anything within the triple single quote will not be executed
+    at all
+'''
+@app.route('/',methods=['POST','GET'])
+def index():
+    a = 100
+    b = "I am String"
+    c = 123.456
+    d = Weather()
+
+    print(type(a))
+    print(type(b))
+    print(type(c))
+    print(type(d))
+    return "Hello World"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    
+
+
+
 '''
 @app.route('/',methods=['POST','GET'])
 def index():
@@ -35,5 +63,4 @@ def CreateDatabase():
     return "Something Wrong"
 '''
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
